@@ -33,7 +33,6 @@ export const Time = styled.div`
   position: absolute;
 `
 
-
 export const Iphone = styled.div`
   position: relative;
   margin: 80px auto 0 auto;
