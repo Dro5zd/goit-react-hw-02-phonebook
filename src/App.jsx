@@ -15,6 +15,14 @@ export class App extends Component {
     ],
     filter: '',
   };
+  componentDidMount() {
+    localStorage.getItem('contacts') &&
+    this.setState({contacts: JSON.parse(localStorage.getItem('contacts'))});
+  }
+
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    localStorage.setItem('contacts', JSON.stringify(this.state.contacts) )
+  }
 
   addContact = (name, number) => {
     if (!this.state.contacts.map(name => name.name).includes(name)){
